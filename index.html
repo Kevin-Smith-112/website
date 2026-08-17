@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pato Sucks</title>
+    <style>
+      :root {
+        --bg-1: #11071a;
+        --bg-2: #1d1230;
+        --panel: rgba(24, 17, 32, 0.82);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: #f8f1ff;
+        --muted: #d5c3ef;
+        --red: #ff4d6d;
+        --pink: #ff8fab;
+        --purple: #8b5cf6;
+        --gold: #ffd166;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top, rgba(255, 109, 149, 0.32), transparent 28%),
+          radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.28), transparent 24%),
+          linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      }
+
+      .poster {
+        width: min(90vw, 900px);
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .poster::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 45%, transparent 100%);
+        transform: translateX(-30%);
+        pointer-events: none;
+      }
+
+      .content {
+        position: relative;
+        padding: 56px 48px;
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 8px 14px;
+        border: 1px solid rgba(255, 209, 102, 0.6);
+        border-radius: 999px;
+        color: var(--gold);
+        background: rgba(255, 209, 102, 0.08);
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 24px 0 18px;
+        font-size: clamp(3rem, 8vw, 7rem);
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+        text-transform: uppercase;
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, var(--pink), var(--red), var(--gold));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 24px rgba(255, 77, 109, 0.25);
+      }
+
+      p {
+        margin: 0 auto;
+        max-width: 620px;
+        color: var(--muted);
+        font-size: 1.06rem;
+        line-height: 1.7;
+      }
+
+      .cta-row {
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 14px 24px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .primary {
+        background: linear-gradient(135deg, var(--red), var(--pink));
+        color: white;
+        box-shadow: 0 18px 32px rgba(255, 77, 109, 0.35);
+      }
+
+      .secondary {
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+
+      .footer-note {
+        margin-top: 28px;
+        font-size: 0.82rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.7);
+      }
+
+      @media (max-width: 640px) {
+        .content {
+          padding: 42px 24px;
+        }
+
+        .button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="poster">
+      <div class="content">
+        <div class="badge">Public Service Announcement</div>
+        <h1 class="gradient-text">Pato sucks</h1>
+        <p>
+          This is the official declaration. Loud, dramatic, and unapologetically bold —
+          because some things are simply not worth defending.
+        </p>
+
+        <div class="cta-row">
+          <a class="button primary" href="#">Take the stand</a>
+          <a class="button secondary" href="#">Learn more</a>
+        </div>
+
+        <div class="footer-note">No apologies. No hesitation.</div>
+      </div>
+    </div>
+  </body>
+</html>
