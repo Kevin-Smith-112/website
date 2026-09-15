@@ -3,168 +3,491 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pato Sucks</title>
-    <style>
-      :root {
-        --bg-1: #11071a;
-        --bg-2: #1d1230;
-        --panel: rgba(24, 17, 32, 0.82);
-        --border: rgba(255, 255, 255, 0.12);
-        --text: #f8f1ff;
-        --muted: #d5c3ef;
-        --red: #ff4d6d;
-        --pink: #ff8fab;
-        --purple: #8b5cf6;
-        --gold: #ffd166;
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top, rgba(255, 109, 149, 0.32), transparent 28%),
-          radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.28), transparent 24%),
-          linear-gradient(135deg, var(--bg-1), var(--bg-2));
-      }
-
-      .poster {
-        width: min(90vw, 900px);
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 28px;
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
-        overflow: hidden;
-        position: relative;
-      }
-
-      .poster::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 45%, transparent 100%);
-        transform: translateX(-30%);
-        pointer-events: none;
-      }
-
-      .content {
-        position: relative;
-        padding: 56px 48px;
-        text-align: center;
-      }
-
-      .badge {
-        display: inline-block;
-        padding: 8px 14px;
-        border: 1px solid rgba(255, 209, 102, 0.6);
-        border-radius: 999px;
-        color: var(--gold);
-        background: rgba(255, 209, 102, 0.08);
-        font-size: 0.78rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        font-weight: 700;
-      }
-
-      h1 {
-        margin: 24px 0 18px;
-        font-size: clamp(3rem, 8vw, 7rem);
-        line-height: 0.92;
-        letter-spacing: -0.05em;
-        text-transform: uppercase;
-      }
-
-      .gradient-text {
-        background: linear-gradient(135deg, var(--pink), var(--red), var(--gold));
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        text-shadow: 0 0 24px rgba(255, 77, 109, 0.25);
-      }
-
-      p {
-        margin: 0 auto;
-        max-width: 620px;
-        color: var(--muted);
-        font-size: 1.06rem;
-        line-height: 1.7;
-      }
-
-      .cta-row {
-        margin-top: 32px;
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
-      .button {
-        display: inline-block;
-        padding: 14px 24px;
-        border-radius: 999px;
-        text-decoration: none;
-        font-weight: 700;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .button:hover {
-        transform: translateY(-2px);
-      }
-
-      .primary {
-        background: linear-gradient(135deg, var(--red), var(--pink));
-        color: white;
-        box-shadow: 0 18px 32px rgba(255, 77, 109, 0.35);
-      }
-
-      .secondary {
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--text);
-        border: 1px solid var(--border);
-      }
-
-      .footer-note {
-        margin-top: 28px;
-        font-size: 0.82rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.7);
-      }
-
-      @media (max-width: 640px) {
-        .content {
-          padding: 42px 24px;
-        }
-
-        .button {
-          width: 100%;
-          text-align: center;
-        }
-      }
-    </style>
+    <title>LCLP — Lake Country Local Produce</title>
+    <meta
+      name="description"
+      content="Lake Country Local Produce (LCLP) is a neighbourhood grocery store in Lake Country, BC celebrating fresh fruit and vegetables grown by our local orchards and farms."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍎</text></svg>" />
   </head>
   <body>
-    <div class="poster">
-      <div class="content">
-        <div class="badge">Public Service Announcement</div>
-        <h1 class="gradient-text">Pato sucks</h1>
-        <p>
-          This is the official declaration. Loud, dramatic, and unapologetically bold —
-          because some things are simply not worth defending.
-        </p>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand">
+          <span class="brand-mark" aria-hidden="true">🍎</span>
+          <span class="brand-text">
+            <span class="full-name">Lake Country Local Produce</span>
+            <span class="sub">LCLP · Lake Country, BC</span>
+          </span>
+        </a>
 
-        <div class="cta-row">
-          <a class="button primary" href="#">Take the stand</a>
-          <a class="button secondary" href="#">Learn more</a>
-        </div>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#growers">Our Growers</a></li>
+            <li><a href="#seasonal">In Season</a></li>
+            <li><a href="#visit">Visit Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
 
-        <div class="footer-note">No apologies. No hesitation.</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
       </div>
-    </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero" id="home">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow">Now Open in Lake Country</span>
+            <h1>Fresh from the orchard, <br /><span>straight to your basket.</span></h1>
+            <p class="lead">
+              LCLP is a Lake Country grocery store built around one idea: the best produce
+              in the Okanagan is grown right down the road. We partner with the orchards,
+              farms, and market gardeners of Lake Country to bring you fruit and vegetables
+              picked at their peak — not shipped across a continent.
+            </p>
+            <div class="hero-ctas">
+              <a href="#growers" class="btn btn-primary">Meet Our Growers</a>
+              <a href="#visit" class="btn btn-outline">Store Hours &amp; Directions</a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <strong>10+</strong>
+                <span>Local Farms &amp; Orchards</span>
+              </div>
+              <div>
+                <strong>100%</strong>
+                <span>Okanagan Grown</span>
+              </div>
+              <div>
+                <strong>7</strong>
+                <span>Days a Week</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <span class="basket">🧺</span>
+            <span class="float-icon fi-1">🍒</span>
+            <span class="float-icon fi-2">🍑</span>
+            <span class="float-icon fi-3">🌽</span>
+            <span class="float-icon fi-4">🍇</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Our Story</span>
+            <h2>A grocery store rooted in Lake Country</h2>
+            <p>
+              Lake Country sits between Kalamalka and Wood Lake, in the heart of some of the
+              Okanagan's oldest and most productive orchard land. LCLP was started to give
+              that produce a proper front door — a single place in town where neighbours can
+              find the week's fruit and vegetable harvest from the farms just up the road.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-card">
+              <div class="icon">🚜</div>
+              <h3>Grown Down the Road</h3>
+              <p>
+                Everything on our shelves comes from Lake Country growers, most within a
+                ten-minute drive of the store. We know the families behind every bin.
+              </p>
+            </div>
+            <div class="about-card">
+              <div class="icon">🌤️</div>
+              <h3>Picked at Peak</h3>
+              <p>
+                Because our growers are so close, produce moves from orchard to store the
+                same day it's picked — no long cold-storage supply chain required.
+              </p>
+            </div>
+            <div class="about-card">
+              <div class="icon">🤝</div>
+              <h3>Fair to Farmers</h3>
+              <p>
+                We pay our growers a fair price for their harvest so the orchards and farms
+                that make Lake Country special can keep farming for generations to come.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Growers -->
+      <section id="growers" class="growers">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Who We Carry</span>
+            <h2>Our Local Growers</h2>
+            <p>
+              LCLP sources from the orchards, farms, and market gardens that make up Lake
+              Country's Farm Gate Trail. Here are some of the local growers you'll find on
+              our shelves throughout the season.
+            </p>
+          </div>
+
+          <div class="grower-grid">
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🍎</span>
+                <div>
+                  <h3>Gatzke Orchards</h3>
+                  <div class="grower-loc">Pelmewash Parkway, Lake Country</div>
+                </div>
+              </div>
+              <p>A Lake Country landmark between Kalamalka and Wood Lake, known for beautifully presented fresh fruit and baked goods.</p>
+              <div class="tag-row">
+                <span class="tag">Tree Fruit</span>
+                <span class="tag">Baked Goods</span>
+                <span class="tag">Farm Market</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🍏</span>
+                <div>
+                  <h3>Rose Hill Orchard</h3>
+                  <div class="grower-loc">Okanagan Centre Road East, Lake Country</div>
+                </div>
+              </div>
+              <p>Home to over 30 apple varieties — Gala, Honeycrisp, and Sunset among them — plus stone fruit, honey, eggs, and cheese.</p>
+              <div class="tag-row">
+                <span class="tag">30+ Apple Varieties</span>
+                <span class="tag">Stone Fruit</span>
+                <span class="tag">U-Pick</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🍐</span>
+                <div>
+                  <h3>Gambell Farms</h3>
+                  <div class="grower-loc">Overlooking Wood Lake, Lake Country</div>
+                </div>
+              </div>
+              <p>A family farm growing plums, table grapes, pears, and apples, with fresh fruit pies and scones baked on site.</p>
+              <div class="tag-row">
+                <span class="tag">Plums &amp; Grapes</span>
+                <span class="tag">Pears</span>
+                <span class="tag">Fresh Baking</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🍒</span>
+                <div>
+                  <h3>Chahal Farms</h3>
+                  <div class="grower-loc">Highway 97, Lake Country</div>
+                </div>
+              </div>
+              <p>A roadside stand loaded with cherries, rainier cherries, apricots, peaches, plums, and nectarines through the summer.</p>
+              <div class="tag-row">
+                <span class="tag">Cherries</span>
+                <span class="tag">Peaches &amp; Plums</span>
+                <span class="tag">Blueberries</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🍑</span>
+                <div>
+                  <h3>Wendell Orchards</h3>
+                  <div class="grower-loc">Carrs Landing Road, Lake Country</div>
+                </div>
+              </div>
+              <p>A lakefront fruit and vegetable stand on Okanagan Lake growing apples, nectarines, peaches, cherries, and berries.</p>
+              <div class="tag-row">
+                <span class="tag">Apples</span>
+                <span class="tag">Nectarines</span>
+                <span class="tag">Berries</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🧄</span>
+                <div>
+                  <h3>Hyatt Orchards</h3>
+                  <div class="grower-loc">Oceola Road, Lake Country</div>
+                </div>
+              </div>
+              <p>A family orchard growing tomatoes, apples, cherries, and Russian garlic alongside a rotating mix of seasonal vegetables.</p>
+              <div class="tag-row">
+                <span class="tag">Tomatoes</span>
+                <span class="tag">Garlic</span>
+                <span class="tag">Apples</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🌿</span>
+                <div>
+                  <h3>Claremont Ranch Organics</h3>
+                  <div class="grower-loc">Lake Country, BC</div>
+                </div>
+              </div>
+              <p>A certified organic orchard growing pears, peaches, apricots, plums, and roughly 35 heritage apple varieties.</p>
+              <div class="tag-row">
+                <span class="tag">Certified Organic</span>
+                <span class="tag">Heritage Apples</span>
+                <span class="tag">Stone Fruit</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🍇</span>
+                <div>
+                  <h3>Sproule &amp; Daughter's Farm</h3>
+                  <div class="grower-loc">Lake Country, BC</div>
+                </div>
+              </div>
+              <p>A third-generation organic fruit farm producing cherries, apricots, nectarines, peaches, plums, and grapes.</p>
+              <div class="tag-row">
+                <span class="tag">Organic</span>
+                <span class="tag">Cherries</span>
+                <span class="tag">Grapes</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🥬</span>
+                <div>
+                  <h3>Rusty Acres Organics</h3>
+                  <div class="grower-loc">Lake Country, BC</div>
+                </div>
+              </div>
+              <p>Fresh greens and vegetables grown without pesticides, herbicides, or salt-based fertilizers, including aquaponic greens.</p>
+              <div class="tag-row">
+                <span class="tag">Pesticide-Free</span>
+                <span class="tag">Greens</span>
+                <span class="tag">Aquaponics</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🥕</span>
+                <div>
+                  <h3>McCoubrey Farms</h3>
+                  <div class="grower-loc">Highway 97, Winfield / Lake Country</div>
+                </div>
+              </div>
+              <p>A long-standing local farm just south of Winfield Town Centre, supplying seasonal fruit and vegetables.</p>
+              <div class="tag-row">
+                <span class="tag">Seasonal Veg</span>
+                <span class="tag">Local Staple</span>
+              </div>
+            </article>
+
+            <article class="grower-card">
+              <div class="grower-top">
+                <span class="grower-emoji">🧺</span>
+                <div>
+                  <h3>Farmer's Fruit and Produce</h3>
+                  <div class="grower-loc">Lake Country, BC</div>
+                </div>
+              </div>
+              <p>A local favourite offering fresh produce alongside meats, baking, and specialty cheeses from area producers.</p>
+              <div class="tag-row">
+                <span class="tag">Produce</span>
+                <span class="tag">Specialty Cheese</span>
+                <span class="tag">Baking</span>
+              </div>
+            </article>
+          </div>
+
+          <p class="growers-note">
+            Curious who's picking this week? Ask our staff in-store — our shelf tags name
+            the exact farm behind every bin, box, and basket.
+          </p>
+        </div>
+      </section>
+
+      <!-- Seasonal -->
+      <section id="seasonal">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">What's Fresh</span>
+            <h2>In Season Right Now</h2>
+            <p>
+              Our shelves change with the Okanagan growing season. Here's a taste of what
+              Lake Country orchards and farms typically bring in from spring through fall.
+            </p>
+          </div>
+
+          <div class="season-strip">
+            <div class="season-chip"><span class="em">🍓</span> Strawberries</div>
+            <div class="season-chip"><span class="em">🍒</span> Cherries</div>
+            <div class="season-chip"><span class="em">🍑</span> Peaches &amp; Apricots</div>
+            <div class="season-chip"><span class="em">🫐</span> Blueberries</div>
+            <div class="season-chip"><span class="em">🍅</span> Tomatoes</div>
+            <div class="season-chip"><span class="em">🌽</span> Sweet Corn</div>
+            <div class="season-chip"><span class="em">🍇</span> Table Grapes</div>
+            <div class="season-chip"><span class="em">🍐</span> Pears</div>
+            <div class="season-chip"><span class="em">🍎</span> 30+ Apple Varieties</div>
+            <div class="season-chip"><span class="em">🎃</span> Pumpkins &amp; Squash</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visit / hours -->
+      <section id="visit">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Come Say Hi</span>
+            <h2>Visit the Store</h2>
+            <p>Drop by for a basket of whatever's freshest this week — our staff always know what just came in.</p>
+          </div>
+
+          <div class="market-grid">
+            <div class="market-card">
+              <h3>🕒 Store Hours</h3>
+              <table class="hours-table">
+                <tbody>
+                  <tr><td>Monday</td><td>9:00 am – 6:00 pm</td></tr>
+                  <tr><td>Tuesday</td><td>9:00 am – 6:00 pm</td></tr>
+                  <tr><td>Wednesday</td><td>9:00 am – 6:00 pm</td></tr>
+                  <tr><td>Thursday</td><td>9:00 am – 7:00 pm</td></tr>
+                  <tr><td>Friday</td><td>9:00 am – 7:00 pm</td></tr>
+                  <tr><td>Saturday</td><td>8:00 am – 6:00 pm</td></tr>
+                  <tr><td>Sunday</td><td>9:00 am – 5:00 pm</td></tr>
+                </tbody>
+              </table>
+              <p style="margin-top:14px; font-size:0.88rem; color:var(--muted);">
+                Also find many of our growers Fridays, June–September, 3–7pm at the
+                Lake Country Farmers' Market in Swalwell Park.
+              </p>
+            </div>
+
+            <div class="market-card">
+              <h3>📍 Find Us</h3>
+              <p>Lake Country Local Produce<br />Main Street, Lake Country, BC, Canada</p>
+              <p style="font-size:0.88rem; color:var(--muted);">
+                Located along Highway 97 in the heart of Lake Country, minutes from
+                Kalamalka Lake, Wood Lake, and the Farm Gate Trail.
+              </p>
+              <div class="map-embed">
+                <iframe
+                  title="Map of Lake Country, BC"
+                  src="https://www.google.com/maps?q=Lake+Country,+BC&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section id="newsletter">
+        <div class="container">
+          <div class="newsletter">
+            <h2>Get the Weekly Harvest List</h2>
+            <p>
+              Sign up and we'll send a short note each week on what's fresh from Lake
+              Country's orchards and farms — no spam, just produce.
+            </p>
+            <form class="newsletter-form">
+              <label class="sr-only" for="newsletter-email">Email address</label>
+              <input id="newsletter-email" type="email" placeholder="you@example.com" required />
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <div class="newsletter-status" role="status"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Get In Touch</span>
+            <h2>Questions? We'd Love to Hear From You</h2>
+          </div>
+
+          <div class="contact-grid">
+            <form class="contact-form">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" type="text" name="name" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+              <div class="form-status" role="status" style="font-size:0.9rem; color:var(--muted);"></div>
+            </form>
+
+            <div>
+              <h3>Store Details</h3>
+              <ul class="contact-info-list">
+                <li><span class="em">📍</span> <span>Main Street, Lake Country, BC, Canada</span></li>
+                <li><span class="em">📞</span> <span>(250) 555-0142</span></li>
+                <li><span class="em">✉️</span> <span>hello@lclpstore.ca</span></li>
+                <li><span class="em">🌱</span> <span>Interested in supplying LCLP? Local growers, get in touch — we're always happy to add a new farm to the shelf.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h4>Lake Country Local Produce</h4>
+          <p style="max-width: 36ch;">
+            A neighbourhood grocery store in Lake Country, BC, stocked with fruit and
+            vegetables grown by the local farms and orchards that make this valley special.
+          </p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#growers">Our Growers</a></li>
+            <li><a href="#seasonal">In Season</a></li>
+            <li><a href="#visit">Visit Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="#contact">Get in Touch</a></li>
+            <li><a href="mailto:hello@lclpstore.ca">hello@lclpstore.ca</a></li>
+            <li><a href="tel:+12505550142">(250) 555-0142</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        &copy; <span id="footer-year">2026</span> Lake Country Local Produce (LCLP). All rights reserved.
+      </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
   </body>
 </html>
